@@ -13,7 +13,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 from svgpathtools import parse_path
-from actr import *
+from python_actr import *
 
 # Using the code above, if python_actr is not installed, it first install python_actr 
 # then imports its modules: from python_actr import *
