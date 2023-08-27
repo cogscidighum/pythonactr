@@ -66,7 +66,7 @@ def main():
 
 
 def about():
-    #from python_actr import *
+    from python_actr import *
     class MyEnv(Model):
         pass
     class MyAgent(ACTR):
