@@ -66,10 +66,10 @@ def main():
 
 
 def about():
-  #from python_actr import *
-  class MyEnv(Model):
+    #from python_actr import *
+    class MyEnv(Model):
     pass
-  class MyAgent(ACTR):
+    class MyAgent(ACTR):
     production_time = 0.05
     production_sd = 0.01
     production_threshold = -20
@@ -83,12 +83,12 @@ def about():
       goal.set("stop") # set goal buffer to direct program flow
     def stop_production(goal="stop"):
       self.stop() # stop the agent
-  
-  tim = MyAgent()
-  subway=MyEnv()
-  subway.agent=tim
-  log_everything(subway)
-  subway.run()
+    
+    tim = MyAgent()
+    subway=MyEnv()
+    subway.agent=tim
+    log_everything(subway)
+    subway.run()
 
     st.markdown(
         """
@@ -103,7 +103,7 @@ def about():
     st.markdown(
         """
     What you can do with Drawable Canvas:
-
+    
     * Draw freely, lines, circles and boxes on the canvas, with options on stroke & fill
     * Rotate, skew, scale, move any object of the canvas on demand
     * Select a background color or image to draw on
