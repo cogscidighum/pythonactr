@@ -13,18 +13,20 @@ import streamlit as st
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 from svgpathtools import parse_path
+
 from python_actr import *
 
-import sys
-print("Python version")
-print (sys.version)
-print("Version info.")
-print (sys.version_info)
+#import sys
+#print("Python version")
+#print (sys.version)
+#print("Version info.")
+#print (sys.version_info)
 
 # Using the code above, if python_actr is not installed, it first install python_actr 
 # then imports its modules: from python_actr import *
 # so no needs to import the following modules one by one, but you can use them instead 
 # by uncommenting one by one, when needed, instead of importing everything at once:
+
 #import python_actr
 #from python_actr import log
 #from python_actr import ACTR
@@ -33,28 +35,6 @@ print (sys.version_info)
 #from python_actr import Memory
 #from python_actr import DMSpreading
 #from python_actr import log_everything
-class MyEnv(Model):
-  pass
-class MyAgent(ACTR):
-  production_time = 0.05
-  production_sd = 0.01
-  production_threshold = -20
-  
-  goal = Buffer() # Creating the goal buffer for the agent
-  
-  def init(): # this rule fires when the agent is instantiated.
-    goal.set("sandwich bread") # set goal buffer to direct program flow
-  def bread_bottom(goal="sandwich bread"): # if goal="sandwich bread" , fire rule
-    print ("I have a piece of bread")
-    goal.set("stop") # set goal buffer to direct program flow
-  def stop_production(goal="stop"):
-    self.stop() # stop the agent
-
-tim = MyAgent()
-subway=MyEnv()
-subway.agent=tim
-log_everything(subway)
-subway.run()
 
 def main():
     
@@ -86,6 +66,30 @@ def main():
 
 
 def about():
+  #from python_actr import *
+  class MyEnv(Model):
+    pass
+  class MyAgent(ACTR):
+    production_time = 0.05
+    production_sd = 0.01
+    production_threshold = -20
+    
+    goal = Buffer() # Creating the goal buffer for the agent
+    
+    def init(): # this rule fires when the agent is instantiated.
+      goal.set("sandwich bread") # set goal buffer to direct program flow
+    def bread_bottom(goal="sandwich bread"): # if goal="sandwich bread" , fire rule
+      print ("I have a piece of bread")
+      goal.set("stop") # set goal buffer to direct program flow
+    def stop_production(goal="stop"):
+      self.stop() # stop the agent
+  
+  tim = MyAgent()
+  subway=MyEnv()
+  subway.agent=tim
+  log_everything(subway)
+  subway.run()
+
     st.markdown(
         """
     Welcome to the demo of [Streamlit Drawable Canvas](https://github.com/andfanilo/streamlit-drawable-canvas).
