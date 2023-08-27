@@ -15,6 +15,12 @@ from streamlit_drawable_canvas import st_canvas
 from svgpathtools import parse_path
 from python_actr import *
 
+import sys
+print("Python version")
+print (sys.version)
+print("Version info.")
+print (sys.version_info)
+
 # Using the code above, if python_actr is not installed, it first install python_actr 
 # then imports its modules: from python_actr import *
 # so no needs to import the following modules one by one, but you can use them instead 
