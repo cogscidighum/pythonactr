@@ -46,9 +46,9 @@ def main():
     if "color_to_label" not in st.session_state:
         st.session_state["color_to_label"] = {}
     PAGES = {
-        "ACT-R": actr,
 	"UTube": utube,
 	"About": about,
+	"ACT-R": actr,
         "Basic example": full_app,
         "Get center coords of circles": center_circle_app,
         "Color-based image annotation": color_annotation_app,
@@ -80,8 +80,8 @@ def utube():
 				api_name="/predict"
     )
     print("aso2: ", result)
-    st.sidebar.header("Views: ",result)
-    st.title("ViewsTitle: ",result)
+    st.sidebar.header("aso2: "+ str(result))
+    st.title(result)
 
     st.markdown(
         """
