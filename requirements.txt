@@ -3,4 +3,5 @@ streamlit-drawable-canvas>=0.8
 svgpathtools
 svgwrite
 python_actr
+gradio_client
 
