@@ -76,6 +76,7 @@ def about():
     result = client.predict(
 				"https://www.youtube.com/watch?v=prt9D90BvFI",	# str in 'link' Textbox component
 				api_name="/predict"
+    )
     print("aso1: ", result)
 
     #from python_actr import *
