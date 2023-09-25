@@ -15,6 +15,7 @@ from streamlit_drawable_canvas import st_canvas
 from svgpathtools import parse_path
 
 from python_actr import *
+from gradio_client import Client
 
 #import sys
 #print("Python version")
@@ -66,15 +67,15 @@ def main():
 
 
 def about():
+
     from gradio_client import Client
 
-    client = Client("https://osaaso-minigpt4-cpp.hf.space/")
+    client = Client("https://osaaso-aj-rick-discord-bot.hf.space/")
     result = client.predict(
-    				"https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png",	# str (filepath or URL to image) in 'parameter_6' Image component
-    				"Howdy!",	# str  in 'User' Textbox component
-    				fn_index=0
+    				"Howdy!",	# str in 'parameter_6' Textbox component
+    				api_name="/predict"
     )
-    print(result)
+    print("aso1: ", result)
 
     #from python_actr import *
     class MyEnv(Model):
