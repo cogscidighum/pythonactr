@@ -46,7 +46,9 @@ def main():
     if "color_to_label" not in st.session_state:
         st.session_state["color_to_label"] = {}
     PAGES = {
-        "About": about,
+        "ACT-R": actr,
+	"UTube": utube,
+	"About": about,
         "Basic example": full_app,
         "Get center coords of circles": center_circle_app,
         "Color-based image annotation": color_annotation_app,
@@ -68,7 +70,7 @@ def main():
         )
 
 
-def about():
+def utube():
 
     from gradio_client import Client
 
@@ -78,40 +80,35 @@ def about():
 				api_name="/predict"
     )
     print("aso2: ", result)
-
-    #from python_actr import *
-    class MyEnv(Model):
-        pass
-    class MyAgent(ACTR):
-        production_time = 0.05
-        production_sd = 0.01
-        production_threshold = -20
-        
-        goal = Buffer() # Creating the goal buffer for the agent
-        
-        def init(): # this rule fires when the agent is instantiated.
-          goal.set("sandwich bread") # set goal buffer to direct program flow
-        def bread_bottom(goal="sandwich bread"): # if goal="sandwich bread" , fire rule
-          print ("I have a piece of bread")
-          goal.set("stop") # set goal buffer to direct program flow
-        def stop_production(goal="stop"):
-          self.stop() # stop the agent
-        
-    tim = MyAgent()
-    subway=MyEnv()
-    subway.agent=tim
-    log_everything(subway)
-    subway.run()
+    st.sidebar.header("Views: ",result)
+    st.title("ViewsTitle: ",result)
 
     st.markdown(
         """
-    Welcome to the demo of [Streamlit Drawable Canvas](https://github.com/andfanilo/streamlit-drawable-canvas).
+    Welcome 
     
-    On this site, you will find a full use case for this Streamlit component, and answers to some frequently asked questions.
-    
-    :pencil: [Demo source code](https://github.com/andfanilo/streamlit-drawable-canvas-demo/)    
+    :pencil: [Open](https://pythonactr.streamlit.app/)    
     """
     )
+    st.image("img/demo.gif")
+    st.markdown(
+        """
+    What you can do with this:
+    
+    * get views
+
+    """
+    )
+def about():
+
+    st.markdown(
+	"""
+	Welcome to the demo of [Open](https://pythonactr.streamlit.app/).
+	
+	
+	:pencil: [Demo source code](https://pythonactr.streamlit.app/)    
+	"""
+	)
     st.image("img/demo.gif")
     st.markdown(
         """
@@ -126,9 +123,9 @@ def about():
     * Save canvas data as JSON to reuse for another session
     """
     )
+def actr():
 
 
-def full_app():
     #from python_actr import *
     class MyEnv(Model):
         pass
@@ -152,6 +149,26 @@ def full_app():
     subway.agent=tim
     log_everything(subway)
     subway.run()
+
+    st.markdown(
+        """
+    Welcome to the demo of [Open](https://pythonactr.streamlit.app/).
+        
+    :pencil: [Demo](https://pythonactr.streamlit.app/)    
+    """
+    )
+    st.image("img/demo.gif")
+    st.markdown(
+        """
+    What you can do with Drawable Canvas:
+    
+    * Modeling
+
+    """
+    )
+
+
+def full_app():
     
     st.sidebar.header("Configuration")
     st.markdown(
