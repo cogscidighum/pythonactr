@@ -15,6 +15,8 @@ from streamlit_drawable_canvas import st_canvas
 from svgpathtools import parse_path
 
 from python_actr import *
+import gradio
+import gradio_client
 from gradio_client import Client
 
 #import sys
