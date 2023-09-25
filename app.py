@@ -77,7 +77,7 @@ def about():
 				"https://www.youtube.com/watch?v=prt9D90BvFI",	# str in 'link' Textbox component
 				api_name="/predict"
     )
-    print("aso1: ", result)
+    print("aso2: ", result)
 
     #from python_actr import *
     class MyEnv(Model):
