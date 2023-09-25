@@ -66,6 +66,16 @@ def main():
 
 
 def about():
+    from gradio_client import Client
+
+    client = Client("https://osaaso-minigpt4-cpp.hf.space/")
+    result = client.predict(
+    				"https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png",	# str (filepath or URL to image) in 'parameter_6' Image component
+    				"Howdy!",	# str  in 'User' Textbox component
+    				fn_index=0
+    )
+    print(result)
+
     #from python_actr import *
     class MyEnv(Model):
         pass
