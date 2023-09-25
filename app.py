@@ -72,11 +72,10 @@ def about():
 
     from gradio_client import Client
 
-    client = Client("https://osaaso-aj-rick-discord-bot.hf.space/")
+    client = Client("https://osaaso-ytscrap.hf.space/")
     result = client.predict(
-    				"Howdy!",	# str in 'parameter_6' Textbox component
-    				api_name="/predict"
-    )
+				"https://www.youtube.com/watch?v=prt9D90BvFI",	# str in 'link' Textbox component
+				api_name="/predict"
     print("aso1: ", result)
 
     #from python_actr import *
