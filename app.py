@@ -80,14 +80,14 @@ def utube():
 				api_name="/predict"
     )
     print("aso2: ", result)
-    st.sidebar.header("aso2: "+ str(result))
+    st.sidebar.header("The Talk by Rob West has Viewcounts of : "+ str(result))
     st.title(result)
 
     st.markdown(
         """
     Welcome 
     
-    :pencil: [Open](https://pythonactr.streamlit.app/)    
+    :pencil: [Open](https://osaaso-ytscrap.hf.space)    
     """
     )
     st.image("img/demo.gif")
