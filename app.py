@@ -124,48 +124,54 @@ def about():
     """
     )
 def actr():
-
-
-    from python_actr import *
-    class MyEnv(Model):
-        pass
-    class MyAgent(ACTR):
-        production_time = 0.05
-        production_sd = 0.01
-        production_threshold = -20
-        
-        goal = Buffer() # Creating the goal buffer for the agent
-        
-        def init(): # this rule fires when the agent is instantiated.
-          goal.set("sandwich bread") # set goal buffer to direct program flow
-        def bread_bottom(goal="sandwich bread"): # if goal="sandwich bread" , fire rule
-          print ("I have a piece of bread")
-          goal.set("stop") # set goal buffer to direct program flow
-        def stop_production(goal="stop"):
-          self.stop() # stop the agent
-        
-    tim = MyAgent()
-    subway=MyEnv()
-    subway.agent=tim
-    log_everything(subway)
-    subway.run()
-
-    st.markdown(
-        """
-    Welcome to the demo of [Open](https://pythonactr.streamlit.app/).
-        
-    :pencil: [Demo](https://pythonactr.streamlit.app/)    
-    """
-    )
-    #st.image("img/demo.gif")
-    st.markdown(
-        """
-    What you can do with Pythonactr:
-    
-    * Modeling
-
-    """
-    )
+	import python_actr
+	from python_actr import log
+	from python_actr import ACTR
+	from python_actr import Model
+	from python_actr import Buffer
+	from python_actr import Memory
+	from python_actr import DMSpreading
+	from python_actr import log_everything
+	
+	from python_actr import *
+	class MyEnv(Model):
+		pass
+	class MyAgent(ACTR):
+		production_time = 0.05
+		production_sd = 0.01
+		production_threshold = -20
+		
+		goal = Buffer() # Creating the goal buffer for the agent
+		
+		def init(): # this rule fires when the agent is instantiated.
+		  goal.set("sandwich bread") # set goal buffer to direct program flow
+		def bread_bottom(goal="sandwich bread"): # if goal="sandwich bread" , fire rule
+		  print ("I have a piece of bread")
+		  goal.set("stop") # set goal buffer to direct program flow
+		def stop_production(goal="stop"):
+		  self.stop() # stop the agent
+	tim = MyAgent()
+	subway=MyEnv()
+	subway.agent=tim
+	log_everything(subway)
+	subway.run()
+	st.markdown(
+		"""
+	    Welcome to the demo of [Open](https://pythonactr.streamlit.app/).
+		
+	    :pencil: [Demo](https://pythonactr.streamlit.app/)    
+	    """
+	    )
+	    
+	#st.image("img/demo.gif")
+	st.markdown(
+		"""
+	    What you can do with Pythonactr:
+	    
+	    * Modeling
+	
+	    """
+	    )
 
 
 def full_app():
