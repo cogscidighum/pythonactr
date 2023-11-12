@@ -126,7 +126,7 @@ def about():
 def actr():
 
 
-    #from python_actr import *
+    from python_actr import *
     class MyEnv(Model):
         pass
     class MyAgent(ACTR):
@@ -157,10 +157,10 @@ def actr():
     :pencil: [Demo](https://pythonactr.streamlit.app/)    
     """
     )
-    st.image("img/demo.gif")
+    #st.image("img/demo.gif")
     st.markdown(
         """
-    What you can do with Drawable Canvas:
+    What you can do with Pythonactr:
     
     * Modeling
 
