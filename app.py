@@ -133,7 +133,8 @@ def actr():
 	from python_actr import DMSpreading
 	from python_actr import log_everything
 	
-	from python_actr import *
+	#from python_actr import *
+	
 	class MyEnv(Model):
 		pass
 	class MyAgent(ACTR):
